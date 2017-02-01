@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef _WINDOWS
+#if defined(_WINDOWS) || defined(__linux__)
 	#include <GL/glew.h>
 #endif
 #include <SDL_opengl.h>

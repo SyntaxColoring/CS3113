@@ -1,11 +1,11 @@
-#ifdef _WINDOWS
+#if defined(_WINDOWS) || defined(__linux__)
 	#include <GL/glew.h>
 #endif
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include <SDL_image.h>
 
-#ifdef _WINDOWS
+#if defined(_WINDOWS) || defined(__linux__)
 	#define RESOURCE_FOLDER ""
 #else
 	#define RESOURCE_FOLDER "NYUCodebase.app/Contents/Resources/"
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	displayWindow = SDL_CreateWindow("My Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 360, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
 	SDL_GL_MakeCurrent(displayWindow, context);
-	#ifdef _WINDOWS
+	#if defined(_WINDOWS) || defined(__linux__)
 		glewInit();
 	#endif
 
